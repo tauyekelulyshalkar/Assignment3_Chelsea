@@ -1,47 +1,137 @@
-/* ===============================
-   TASK 1 - CHELSEA FC PLAYERS
-   MOBILE FIRST
-   =============================== */
-
+/* ==========================================
+   GENERAL
+   ========================================== */
 
 * {
     box-sizing: border-box;
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+
+
+/* ==========================================
+   HERO
+   Bootstrap layout + custom design
+   ========================================== */
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #f5f8fc;
+}
+
+
+.club-box {
+    background-color: #034694;
+    color: white;
+
+    min-height: 380px;
+
+    border-radius: 25px;
+
+    padding: 50px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.club-circle {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: #034694;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    border: 8px solid #dbe8ff;
+}
+
+
+
+/* ==========================================
+   TASK 1
+   PURE CSS
+   MOBILE FIRST
+
+   IMPORTANT:
+   NO BOOTSTRAP CLASSES ARE USED
+   IN THE PLAYERS SECTION
+   ========================================== */
+
+
+.players-section {
+
+    padding: 40px 15px;
+
     background-color: #f4f6f9;
 }
 
 
-/* ===============================
-   MOBILE
-   Default: 1 card per row
-   =============================== */
-
-.players-section {
-    padding: 30px 15px;
-}
-
 
 .players-section h1 {
+
     text-align: center;
+
     font-size: 28px;
+
     color: #034694;
+
+    margin-top: 0;
+
     margin-bottom: 10px;
 }
 
 
+
 .section-description {
+
     text-align: center;
-    color: #555;
+
+    color: #555555;
+
     margin-bottom: 30px;
 }
 
 
+
+/* MOBILE:
+   1 CARD PER ROW */
+
 .players-grid {
+
     display: grid;
 
     grid-template-columns: 1fr;
@@ -50,7 +140,9 @@ body {
 }
 
 
+
 .player-card {
+
     background-color: white;
 
     padding: 25px;
@@ -59,11 +151,28 @@ body {
 
     border-top: 5px solid #034694;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
+
+.player-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
 .player-card h2 {
+
     color: #034694;
 
     margin-top: 0;
@@ -72,8 +181,10 @@ body {
 }
 
 
+
 .player-card p {
-    color: #444;
+
+    color: #444444;
 
     line-height: 1.6;
 
@@ -82,61 +193,135 @@ body {
 
 
 
-/* ===============================
+/* ==========================================
    TABLET
-   768px and wider
-   2 cards per row
-   =============================== */
+   768px+
+   2 CARDS PER ROW
+   ========================================== */
 
 @media (min-width: 768px) {
 
+
     .players-section {
-        padding: 45px 30px;
+
+        padding: 55px 30px;
+
     }
 
 
     .players-section h1 {
+
         font-size: 36px;
+
+    }
+
+
+    .section-description {
+
+        font-size: 18px;
+
     }
 
 
     .players-grid {
 
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
 
         gap: 25px;
+
     }
+
 }
 
 
 
-/* ===============================
+/* ==========================================
    LAPTOP / DESKTOP
-   1200px and wider
-   3 cards per row
-   =============================== */
+   1200px+
+   3 CARDS PER ROW
+   ========================================== */
 
 @media (min-width: 1200px) {
 
+
     .players-section {
-        padding: 60px 50px;
+
+        padding: 70px 50px;
+
     }
 
 
     .players-section h1 {
+
         font-size: 44px;
+
     }
 
 
     .players-grid {
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(3, 1fr);
 
         gap: 30px;
+
+        max-width: 1400px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
     }
 
 
     .player-card {
+
         padding: 30px;
+
     }
+
+
+    .player-card h2 {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   SMALL PHONE DESIGN
+   ========================================== */
+
+@media (max-width: 575px) {
+
+    .hero-section {
+
+        min-height: auto;
+
+    }
+
+
+    .club-box {
+
+        min-height: 280px;
+
+        padding: 35px 20px;
+
+    }
+
+
+    .club-circle {
+
+        width: 110px;
+
+        height: 110px;
+
+        font-size: 30px;
+
+    }
+
 }
